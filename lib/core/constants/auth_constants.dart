@@ -14,6 +14,7 @@ final class AuthConstans {
   final String txtDontHave = """Don't have account?""";
   final String txtGoogleImage = 'assets/images/login_google.png';
   final String txtGoogle = 'Google';
+  final String txtAlready = 'You have Already Account?';
 }
 
 @riverpod
