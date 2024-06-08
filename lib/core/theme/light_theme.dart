@@ -9,11 +9,11 @@ part 'light_theme.g.dart';
 
 final _lightTheme = ThemeData(brightness: Brightness.light, extensions: [
   AppColorExtension(
-    primary: AppColorPalette.primary,
+    primary: AppColorPalette.secondary,
     secondary: Colors.white,
     text: Colors.black,
-    textInverse: AppColorPalette.secondary,
-    textSubtle: AppColorPalette.sub,
+    textInverse: Color.fromARGB(255, 102, 101, 101),
+    textSubtle: Color.fromARGB(255, 142, 245, 231),
     textSubtlest: Colors.white,
     backgroundDanger: AppColorPalette.backGround,
   ),

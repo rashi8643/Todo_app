@@ -1,8 +1,10 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColorPalette {
-  static const secondary = Color(0xFF9d4edd);
-  static const primary = Color(0xFF400d6e);
+  static const secondary = Color(0xFFbfdbfe);
+  static const primary = Colors.white;
   static const sub = Color(0xFF9e5fc6);
   static const backGround = Color(0xFFf1faee);
 }
