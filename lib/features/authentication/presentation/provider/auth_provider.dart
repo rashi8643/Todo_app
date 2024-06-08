@@ -7,7 +7,9 @@ import 'package:samsidh_task/features/authentication/data/repository/auth_reposi
 import 'package:samsidh_task/features/authentication/domain/repository/auth_repository.dart';
 import 'package:samsidh_task/features/authentication/domain/use_case/google_signin_usecase.dart';
 import 'package:samsidh_task/features/authentication/domain/use_case/signin_usecase.dart';
+import 'package:samsidh_task/features/authentication/domain/use_case/signuot_usecase.dart';
 import 'package:samsidh_task/features/authentication/domain/use_case/signup_usecase.dart';
+import 'package:samsidh_task/features/authentication/presentation/pages/login_page.dart';
 import 'package:samsidh_task/features/home_page/presentation/pages/home_page.dart';
 
 part 'auth_provider.g.dart';
@@ -46,6 +48,15 @@ class Authentication extends _$Authentication {
     try {
       await GoogleSignInUseCase(repository: repository)();
       Future.sync(() => context.go(HomePage.routePath));
+    } on BaseException catch (e) {
+      Future.sync(() => SnackbarUtils.showMessage(context, e.message));
+    }
+  }
+
+  Future<void> logout() async {
+    try {
+      await LogoutUsecase(repository: repository)();
+      Future.sync(() => context.go(LoginPage.routePath));
     } on BaseException catch (e) {
       Future.sync(() => SnackbarUtils.showMessage(context, e.message));
     }
