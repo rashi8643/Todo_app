@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:samsidh_task/features/authentication/presentation/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,6 +9,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+    );
   }
 }
