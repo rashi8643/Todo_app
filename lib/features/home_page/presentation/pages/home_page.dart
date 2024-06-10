@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:samsidh_task/core/constants/app_constants.dart';
 import 'package:samsidh_task/core/theme/app_theme.dart';
 import 'package:samsidh_task/features/authentication/presentation/provider/auth_provider.dart';
 import 'package:samsidh_task/features/home_page/presentation/widgets/bottomsheet_widget.dart';
 import 'package:samsidh_task/features/home_page/presentation/widgets/listview_widget.dart';
+import 'package:samsidh_task/features/home_page/presentation/widgets/payment_gateway.dart';
 
 class HomePage extends ConsumerWidget {
   static const routePath = '/homePage';
@@ -68,7 +70,9 @@ class HomePage extends ConsumerWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.push(PaymentGateway.routePath);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: colors.secondary,
                       shape: RoundedRectangleBorder(
